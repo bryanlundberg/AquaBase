@@ -1,13 +1,34 @@
 {
-  "name": "narodb",
+  "name": "@bryanlundberg/narodb",
   "private": true,
-  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "version": "0.0.1",
   "type": "module",
+  "description": "A simple, fast, and lightweight NoSQL database",
+  "keywords": [
+    "database",
+    "nosql",
+    "json",
+    "fast",
+    "lightweight"
+  ],
+  "author": "Bryan Lundberg",
+  "license": "SSPL",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bryanlundberg/NaroDB"
+  },
+  "homepage": "https://github.com/bryanlundberg/NaroDB",
   "scripts": {
     "dev:bun": "bun ./src/index.ts",
     "dev:node": "npx tsx ./src/index.ts",
     "test": "vitest",
-    "test:watch": "vitest --watch"
+    "test:watch": "vitest --watch",
+    "build": "tsc",
+    "clean": "rmdir /s /q dist",
+    "build:clean": "npm run clean && npm run build",
+    "publish:private": "npm publish --access restricted"
   },
   "dependencies": {
     "lodash": "^4.17.21",
@@ -19,6 +40,7 @@
     "@types/lodash": "^4.17.16",
     "@types/msgpack-lite": "^0.1.11",
     "fs-extra": "^11.3.0",
+    "tsc": "^2.0.4",
     "tsx": "^4.19.3",
     "vitest": "^3.0.9"
   }
